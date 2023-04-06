@@ -1,0 +1,112 @@
+:root {
+  --cor-fundo: #333;
+  --cor-texto: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body 
+{
+  background-color: darkgray;
+}
+
+.topbar 
+{
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  height: 5%;
+  padding: 0 2%;
+}
+
+.logoTopBar
+{
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 6%;
+  height: 10%;
+  margin-top: 1.5%;
+  margin-bottom: 1.2%;
+}
+
+
+.inputCard
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3%;
+  padding-left: 2.5%;
+  height: 45%;
+}
+
+.tituloUsuario,
+.tituloAtividade,
+.tituloTipoAtv 
+{
+  color: var(--cor-texto);
+  font-size: 17px;
+  margin-top: 1%;
+  margin-right: 2%;
+  width: 30%;
+  height: 3%;
+}
+
+.card
+{
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  border-radius: 10px;
+  padding: 2%;
+  margin: 2% 5%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card::before
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2%;
+  width: 4%;
+  height: 100%;
+  background-color: darkgray;
+  z-index: -1;
+}
+
+.relogio
+{
+  display: flex;
+  justify-content: center;
+  font-size: 55px;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  padding-left: 2.5%;
+  padding-right: 1.0% ;
+  height: 45%;
+}
+
+.botoes
+{
+  display: flex;
+  justify-content: center;
+  width: 23%;
+  justify-content: space-between;
+  
+}
+
+
+.btnplaypause
+{
+  margin-right: 25%;
+
+}

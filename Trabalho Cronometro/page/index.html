@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="..\style\style.css"/>
+    <title>ChronusTask</title>
+</head>
+<body>
+    <div class="topbar">
+        <div class="logoTopBar">
+            <img src="..\style\logo.png" alt="logo" class="logo"/>
+        </br>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="inputCard">
+            <div class="userInput">
+              <label class ="tituloUsuario" for="txtUsuario">Usuário:</label>
+              <input type="text" name="txtUsuario" id="usuario" placeholder="Digite seu nome de usuário" class="inputText"/>
+            </div>
+        
+            <div class="atvInput">
+            <label class="tituloAtividade" for="txtAtividade">Atividade:</label>
+            <input type="text" name="txtAtividade" id="atividade" placeholder="Digite o nome da atividade" class="inputText"/>
+            </div>
+
+            <div class="tipoAtvInput">
+                <label class="tituloTipoAtv" for="txtTipoAtividade">Tipo Atividade:</label>
+                <input type="text" name="txtTipoAtividade" id="TipoAtividade" placeholder="Digite o tipo de atividade" class="inputText"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" id="card2">
+        <h1 class="relogio">00:00:00</h1>
+        <div class="botoes">
+            <button class="btnPlayPause" id="btnStartPause">Start</button>
+            <button class="btnStop" id="btnStop">Stop</button>
+            <button class="btnReset" id="btnReset">Reset</button>
+        </div>
+    </div>
+
+    <div class="card">
+    </div>
+
+
+</body>
+</html>
