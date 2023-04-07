@@ -99,7 +99,7 @@ body
   z-index: -1;
 }
 
-.relogio
+.timer
 {
   display: flex;
   justify-content: center;
@@ -122,5 +122,11 @@ body
 .textbox
 {
   border-radius: 10px;
+}
+
+.tabela
+{
+  display: flex;
+
 }
 

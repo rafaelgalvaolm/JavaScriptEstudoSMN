@@ -10,7 +10,7 @@
 <body>
     <div class="topbar">
         <div class="logoTopBar">
-            <img src="..\style\logo.png" alt="logo" class="logo"/>
+            <img src="..\style\imgs\logo.png" alt="logo" class="logo"/>
         </br>
         </div>
     </div>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="card" id="card2">
-        <h1 class="relogio">00:00:00</h1>
+        <h1 class="timer">00:00:00</h1>
         <div class="botoes">
             <a href="#" class="btnPlayPause" id="btnStartPause"><img src="../style/imgs/play-pause-certo.png"/></a>
             <a href="#" class="btnStop" id="btnStop"><img src="../style/imgs/stop.png"/></a>
@@ -43,9 +43,19 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="card3">
+        <div class="tabela">
+            <table>
+                    <tr>
+                        <a href="#" class="btnUsuario"><th class="col1">Usuário</th></a>
+                        <a href="#" class="btnAtividade"><th class="col2">Atividade</th></a>
+                        <a href="#" class="btnTipoAtividade"><th class="col3">Tipo Atividade</th></a>
+                        <a href="#" class="btnTempo"><th class="col4">Tempo</th></a>
+                    </tr>
+
+            </table>
+        </div>
     </div>
-
-
 </body>
+<script src="../script/script.js"></script>
 </html>
