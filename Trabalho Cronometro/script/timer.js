@@ -43,18 +43,7 @@ btnReset.addEventListener("click", function(e) {
   timer.textContent = "00:00:00";
 });
 
-//Segunda parte dedicada a get e post dos inputs
 
-function getAtividades() 
-{
 
-const usuario = document.getElementById("usuario").value;
-const atividade = document.getElementById("atividade").value;
-const tipoAtividade = document.getElementById("tipoAtividade").value;
 
-const content = `Usuario: ${usuario} Atividade: ${atividade} Tipo de atividade: ${tipoAtividade} Tempo: ${timer}`;
-
-document.getElementById("valores").innerHTML = content;
-
-}
 
