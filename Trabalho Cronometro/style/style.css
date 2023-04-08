@@ -135,7 +135,6 @@ body
 
 .informacao
 {
-  border: 1px solid red;
   width: 100%;
 }
 
@@ -145,4 +144,3 @@ body
   margin-right: 20%;
   justify-content: space-between;
 }
-

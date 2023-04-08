@@ -52,9 +52,8 @@ btnReset.addEventListener("click", function(a)
   timer.textContent = intervalId;
 });
 
-function addColuna(elapsedTime)
+function addColuna()
 {
-
   const usuario = document.getElementById("Usuario").value;
   const atividade = document.getElementById("Atividade").value;
   const tipoAtividade = document.getElementById("TipoAtividade").value;
@@ -71,11 +70,5 @@ function addColuna(elapsedTime)
   tipoAtividadeCell.innerHTML = tipoAtividade;
   var tempoCell = row.insertCell(3);
   tempoCell.innerHTML = tempo;
-
 }
-
-
-
-
-
 
