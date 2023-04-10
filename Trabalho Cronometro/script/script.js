@@ -39,6 +39,7 @@ btnStop.addEventListener("click", function(a)
   isPaused = true;
   addColuna(elapsedTime);  
   elapsedTime = 0;
+  timer.textContent = "00:00:00"
 });
 
 function addColuna()
@@ -55,11 +56,14 @@ function addColuna()
     var row = table.rows[i];
     if(row.id == usuario + '_' + atividade + '_' + tipoAtividade)
     {
+      console.log("Encontrou")
       var tempoCell = row.cells[3];
-      tempoCell.innerHTML = formatTime(parseInt(tempoCell.innerHTML) + tempo);
+      var tempoAntigo = date.now() +tempoCell.innerText;
+      tempoCell.innerText = Date.now() + tempo;
       return;
     }
   }
+
 
   var row = table.insertRow(-1);
   row.id = usuario + '_' + atividade + '_' + tipoAtividade;
