@@ -4,6 +4,7 @@ const timer = document.querySelector(".timer");
 const btnStartPause = document.getElementById("btnStartPause");
 const btnStop = document.getElementById("btnStop");
 
+
 let intervalId;
 let startTime;
 let elapsedTime = 0;
@@ -12,6 +13,10 @@ let isPaused = true;
 function updateTimer() {
   const now = Date.now();
   elapsedTime = now - startTime;
+}
+
+function hora(elapsedTime)
+{
   const hours = Math.floor(elapsedTime / (1000 * 60 * 60)).toString().padStart(2, "0");
   const minutes = Math.floor((elapsedTime / (1000 * 60)) % 60).toString().padStart(2, "0");
   const seconds = Math.floor((elapsedTime / 1000) % 60).toString().padStart(2, "0");
@@ -58,8 +63,8 @@ function addColuna()
     {
       console.log("Encontrou")
       var tempoCell = row.cells[3];
-      var tempoAntigo = date.now() +tempoCell.innerText;
-      tempoCell.innerText = Date.now() + tempo;
+      var tempoAntigo = Date.now() + tempoCell.innerText;
+      tempoCell.innerHTML = tempo;
       return;
     }
   }
