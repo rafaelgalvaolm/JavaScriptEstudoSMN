@@ -133,14 +133,26 @@ body
   height: 300%;
 }
 
-.informacao
+.informacao, .tableBody
 {
   width: 100%;
 }
 
-.info
+.tabela tr
 {
   width: 140%;
   margin-right: 20%;
   justify-content: space-between;
+}
+
+.tabela td
+{
+  text-align: center;
+}
+
+.btnUsuario, .btnAtividade, .btnTipoAtv
+{
+  text-decoration: none;
+  color: var(--cor-texto);
+  cursor: pointer;
 }

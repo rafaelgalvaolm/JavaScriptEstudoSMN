@@ -3,7 +3,6 @@
 const timer = document.querySelector(".timer");
 const btnStartPause = document.getElementById("btnStartPause");
 const btnStop = document.getElementById("btnStop");
-const btnReset = document.getElementById("btnReset");
 
 let intervalId;
 let startTime;
@@ -31,25 +30,15 @@ btnStartPause.addEventListener("click", function(e) {
   }
 });
 
-btnStop.addEventListener("click", function(e) {
-  e.preventDefault();
-  clearInterval(intervalId);
-  isPaused = true;
-  elapsedTime = 0;
-  timer.textContent = "00:00:00";
-});
-
-
 //Segunda parte dedicada a inserir os dados corretos dentro do card 3
 
-btnReset.addEventListener("click", function(a)
+btnStop.addEventListener("click", function(a)
 {
   a.preventDefault();
   clearInterval(intervalId);
   isPaused = true;
   addColuna(elapsedTime);  
   elapsedTime = 0;
-  timer.textContent = intervalId;
 });
 
 function addColuna()
@@ -59,9 +48,21 @@ function addColuna()
   const tipoAtividade = document.getElementById("TipoAtividade").value;
   const tempo = document.getElementById("Timer").innerHTML;
 
-  var table = document.getElementById("Tabela");
-  var row = table.insertRow(-1);
+  var table = document.getElementById("TabelaBody");
 
+  for(var i = 0; i < table.rows.length; i++)
+  {
+    var row = table.rows[i];
+    if(row.id == usuario + '_' + atividade + '_' + tipoAtividade)
+    {
+      var tempoCell = row.cells[3];
+      tempoCell.innerHTML = formatTime(parseInt(tempoCell.innerHTML) + tempo);
+      return;
+    }
+  }
+
+  var row = table.insertRow(-1);
+  row.id = usuario + '_' + atividade + '_' + tipoAtividade;
   var usuarioCell = row.insertCell(0);
   usuarioCell.innerHTML = usuario;
   var atividadeCell = row.insertCell(1);
@@ -71,4 +72,5 @@ function addColuna()
   var tempoCell = row.insertCell(3);
   tempoCell.innerHTML = tempo;
 }
+
 
