@@ -4,15 +4,16 @@ const timer = document.querySelector(".timer");
 const btnStartPause = document.getElementById("btnStartPause");
 const btnStop = document.getElementById("btnStop");
 
-
 let intervalId;
 let startTime;
 let elapsedTime = 0;
 let isPaused = true;
 
-function updateTimer() {
+function updateTimer() 
+{
   const now = Date.now();
   elapsedTime = now - startTime;
+  hora(elapsedTime);
 }
 
 function hora(elapsedTime)
@@ -27,7 +28,7 @@ btnStartPause.addEventListener("click", function(e) {
   e.preventDefault();
   if (isPaused) {
     startTime = Date.now() - elapsedTime;
-    intervalId = setInterval(updateTimer, 10);
+    intervalId = setInterval(updateTimer, 1000);
     isPaused = false;
   } else {
     clearInterval(intervalId);
@@ -42,9 +43,9 @@ btnStop.addEventListener("click", function(a)
   a.preventDefault();
   clearInterval(intervalId);
   isPaused = true;
-  addColuna(elapsedTime);  
-  elapsedTime = 0;
-  timer.textContent = "00:00:00"
+  hora(elapsedTime);
+  addColuna();
+  timer.textContent = "00:00:00";
 });
 
 function addColuna()
@@ -52,7 +53,8 @@ function addColuna()
   const usuario = document.getElementById("Usuario").value;
   const atividade = document.getElementById("Atividade").value;
   const tipoAtividade = document.getElementById("TipoAtividade").value;
-  const tempo = document.getElementById("Timer").innerHTML;
+  const tempo = timer.textContent;
+  const elapsedTime = parseInt(tempo)
 
   var table = document.getElementById("TabelaBody");
 
@@ -61,14 +63,13 @@ function addColuna()
     var row = table.rows[i];
     if(row.id == usuario + '_' + atividade + '_' + tipoAtividade)
     {
-      console.log("Encontrou")
       var tempoCell = row.cells[3];
-      var tempoAntigo = Date.now() + tempoCell.innerText;
-      tempoCell.innerHTML = tempo;
+      var tempoAntigo = tempoCell.innerText;
+      var tempoNovo = Date.now() + parseInt(tempoAntigo) + parseInt(elapsedTime);
+      tempoCell.innerHTML = hora(tempoNovo);
       return;
     }
   }
-
 
   var row = table.insertRow(-1);
   row.id = usuario + '_' + atividade + '_' + tipoAtividade;
@@ -79,7 +80,7 @@ function addColuna()
   var tipoAtividadeCell = row.insertCell(2);
   tipoAtividadeCell.innerHTML = tipoAtividade;
   var tempoCell = row.insertCell(3);
-  tempoCell.innerHTML = tempo;
+  tempoCell.innerHTML = hora(elapsedTime);
 }
 
 
