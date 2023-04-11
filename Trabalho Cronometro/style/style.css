@@ -157,3 +157,20 @@ body
   color: var(--cor-texto);
   cursor: pointer;
 }
+
+
+.btnDeletar 
+{
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  cursor: pointer;
+  height: 25px; 
+}
+
+.btnEditar 
+{
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  cursor: pointer;
+  height: 25px; 
+}

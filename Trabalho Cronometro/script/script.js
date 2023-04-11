@@ -5,8 +5,6 @@ const tipoatividade = document.getElementById('TipoAtividade');
 const timer = document.getElementById('Timer');
 const btnPlayPause = document.getElementById('btnStartPause');
 const btnStop = document.getElementById('btnStop');
-const btnEditar = document.getElementById('btnEditar');
-const btnDeletar = document.getElementById('btnDeletar');
 let passarTempo;
 
 function incrementarTempo()
@@ -57,6 +55,9 @@ btnStop.addEventListener('click', function(stop)
   passarTempo = null;
   addColuna();
   timer.innerHTML = "00:00:00";
+  usuario.value = "";
+  atividade.value = "";
+  tipoatividade.value = "";
 });
 
 
@@ -123,7 +124,61 @@ function addColuna()
   cell2.innerHTML = valorAtividade;
   cell3.innerHTML = valorTipoAtividade;
   cell4.innerHTML = valorTimer;
-};
 
-//terceira parte criada em razao da necessidade de se poder editar as tabelas ja criadas ou deleta-las
+  let btnDelete = document.createElement('img');
+  btnDelete.classList.add('btnDeletar');
+  btnDelete.src = "../style/imgs/lixeira.png";
+
+  btnDelete.addEventListener('click', function()
+  {
+    deletarColuna(row);
+  });
+
+  let btnEditar = document.createElement('img');
+  btnEditar.classList.add('btnEditar');
+  btnEditar.src = "../style/imgs/editar.png"
+
+  btnEditar.addEventListener('click', function()
+  {
+    editarColuna(row);
+  });
+
+  let cell5 = row.insertCell(4);
+  let cell6 = row.insertCell(5);
+  cell5.appendChild(btnDelete);
+  cell6.appendChild(btnEditar);
+
+  function deletarColuna(row)
+  {
+    row.remove();
+  }
+
+  function editarColuna(row)
+  {
+    let inputUsuario = document.getElementById('Usuario');
+    let inputAtividade = document.getElementById('Atividade');
+    let inputTipoAtividade = document.getElementById('TipoAtividade');
+
+
+    inputUsuario.value = row.cells[0].innerHTML;
+    inputAtividade.value = row.cells[1].innerHTML;
+    inputTipoAtividade.value = row.cells[2].innerHTML;
+
+    inputUsuario.addEventListener('input' , function()
+    {
+      row.cells[0].innerHTML = inputUsuario.value;
+    });
+
+    inputAtividade.addEventListener('input' , function()
+    {
+      row.cells[1].innerHTML = inputAtividade.value;
+    });
+
+    inputTipoAtividade.addEventListener('input' , function()
+    {
+      row.cells[2].innerHTML = inputTipoAtividade.value;
+    });
+  }
+
+};
 
