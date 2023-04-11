@@ -49,6 +49,7 @@ btnPlayPause.addEventListener('click', function(playPause)
 });
 
 // Segunda parte criada em razao da necessidade de adicionar uma coluna na tabela
+
 btnStop.addEventListener('click', function(stop)
 {
   stop.preventDefault();
@@ -83,14 +84,14 @@ function addColuna()
       cell3 && cell3.innerHTML == valorTipoAtividade
     )
     {
-      let timerArray = cell4.innerHTML.split(':');
-      let timerArray2 = valorTimer.split(':');
-      let horasVelho = parseInt(timerArray[0]);
-      let minutosVelho = parseInt(timerArray[1]);
-      let segundosVelho = parseInt(timerArray[2]);
-      let horasNovo = parseInt(timerArray2[0]);
-      let minutosNovo = parseInt(timerArray2[1]);
-      let segundosNovo = parseInt(timerArray2[2]);
+      let timerArrayAntigo = cell4.innerHTML.split(':');
+      let timerArrayNovo = valorTimer.split(':');
+      let horasVelho = parseInt(timerArrayAntigo[0]);
+      let minutosVelho = parseInt(timerArrayAntigo[1]);
+      let segundosVelho = parseInt(timerAntigo[2]);
+      let horasNovo = parseInt(timerArrayNovo[0]);
+      let minutosNovo = parseInt(timerArrayNovo[1]);
+      let segundosNovo = parseInt(timerArrayNovo[2]);
 
       segundosVelho += segundosNovo;
       minutosVelho += minutosNovo;
@@ -125,3 +126,4 @@ function addColuna()
 };
 
 //terceira parte criada em razao da necessidade de se poder editar as tabelas ja criadas ou deleta-las
+
